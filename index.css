@@ -1,0 +1,49 @@
+/* Basic reset and body setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes padding/border included in element's width/height */
+}
+
+html, body {
+    height: 100%; /* Make html and body take full viewport height */
+    font-family: sans-serif; /* Optional: Set a default font */
+    background-color: #f4f4f4; /* Optional: Light background color */
+}
+
+/* Container to center the button */
+.center-container {
+    display: flex;           /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Ensure container takes at least full viewport height */
+    padding: 20px;           /* Add some padding */
+}
+
+/* Styling for the Call-to-Action button */
+.cta-button {
+    display: inline-block; /* Allow padding and treat it like a block element */
+    padding: 25px 50px;    /* Large padding: Top/Bottom 25px, Left/Right 50px */
+    font-size: 28px;       /* Large font size */
+    font-weight: bold;     /* Make text bold */
+    color: #ffffff;        /* White text color */
+    background-color: #007bff; /* A nice blue background */
+    border: none;          /* No border */
+    border-radius: 8px;    /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline from the link */
+    text-align: center;    /* Center text inside the button */
+    cursor: pointer;       /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect for the button */
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.03);  /* Slightly enlarge the button on hover */
+}
+
+/* Active (click) effect */
+.cta-button:active {
+    transform: scale(0.98); /* Slightly shrink when clicked */
+}

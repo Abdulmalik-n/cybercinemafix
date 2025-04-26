@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout - Movie Ticket Booking</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <style>
+    .instructions {
+      font-size: 0.8em;
+      color: #777;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+      </div>
+      <nav class="left-nav">
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Tickets</a>
+      </nav>
+      <h1 class="site-title">Online Movie Ticket Booking</h1>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Order Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Movie</th>
+            <th>Quantities</th>
+            <th>Price Per Ticket</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="checkout-summary">
+          </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Grand Total</strong></td>
+            <td id="checkout-total">$0.00</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section>
+      <h2>Select Your Seats</h2>
+      <div class="dropdown-wrapper">
+        <button id="toggle-btn" onclick="toggleDropdown()">Select Seats</button>
+        <div id="dropdown-container" style="display: none;">
+          <select id="seat-options" multiple size="10" onchange="handleSeatSelection()">
+            </select>
+          <p class="instructions">Hold Ctrl (or Cmd on Mac) to select multiple seats.</p>
+        </div>
+      </div>
+      <input type="text" id="selected-seats" placeholder="Selected seats will appear here" readonly />
+    </section>
+
+    <section>
+      <h2>Enter Your Details</h2>
+      <form id="payment-form">
+        <label>Full Name: <input type="text" name="fullname" required /></label>
+        <label>Email: <input type="email" name="email" required /></label>
+        <label>Payment Method:
+          <select name="payment" required>
+            <option value="">--Select--</option>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </label>
+        <label>Card Number: <input type="text" name="cardnumber" placeholder="1234-5678-9012-3456" required /></label>
+        <label>Expiry Date: <input type="month" name="expiry" required /></label>
+        <label>CVV: <input type="password" name="cvv" maxlength="4" required /></label>
+        <button type="submit">Confirm Payment</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+  
+  </footer>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
